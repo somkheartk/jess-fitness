@@ -1,7 +1,7 @@
 # Jess Fitness - แอปพลิเคชันฟิตเนสมือถือ
 
 ## ภาพรวม
-แอปพลิเคชันติดตามการออกกำลังกายแบบครบวงจร สร้างด้วย React Native และ Expo
+แอปพลิเคชันติดตามการออกกำลังกายแบบครบวงจร สร้างด้วย **Flutter**
 
 ## คุณสมบัติหลัก
 
@@ -37,41 +37,47 @@
 
 ### ติดตั้ง
 ```bash
-npm install
+flutter pub get
 ```
 
 ### เริ่มใช้งาน
 ```bash
-npm start
+flutter run
 ```
 
-### รันบนมือถือ
-1. ติดตั้งแอป Expo Go บน iOS หรือ Android
-2. สแกน QR code จากหน้าจอ
-3. หรือใช้ emulator: `npm run android` หรือ `npm run ios`
+### คำสั่งที่ใช้บ่อย
+- `flutter pub get` - ติดตั้ง dependencies
+- `flutter run` - รันแอปบนอุปกรณ์/emulator
+- `flutter build apk` - สร้างไฟล์ APK สำหรับ Android
+- `flutter build ios` - สร้างแอป iOS (macOS เท่านั้น)
 
 ## เทคโนโลยีที่ใช้
-- React Native
-- Expo
-- React Navigation
-- JavaScript
+- Flutter
+- Dart
+- Material Design 3
 
 ## โครงสร้างแอป
 ```
 jess-fitness/
-├── App.js                      # แอปหลักพร้อมระบบนำทาง
-├── app.json                    # การตั้งค่า Expo
-├── package.json                # dependencies
-├── src/
+├── lib/
+│   ├── main.dart                  # จุดเริ่มต้นของแอป
 │   └── screens/
-│       ├── HomeScreen.js       # หน้าแรก
-│       ├── WorkoutScreen.js    # ติดตามเวิร์กเอาท์
-│       ├── ExercisesScreen.js  # คลังท่าออกกำลังกาย
-│       └── ProfileScreen.js    # โปรไฟล์ผู้ใช้
-└── assets/                     # ไอคอนและรูปภาพ
+│       ├── home_screen.dart       # หน้าแรก
+│       ├── workout_screen.dart    # ติดตามเวิร์กเอาท์
+│       ├── exercises_screen.dart  # คลังท่าออกกำลังกาย
+│       └── profile_screen.dart    # โปรไฟล์ผู้ใช้
+├── android/                       # ไฟล์ Android
+├── ios/                           # ไฟล์ iOS
+└── pubspec.yaml                   # การตั้งค่าและ dependencies
 ```
 
-## หมายเหตุ
-แอปพลิเคชันนี้สร้างตามคำขอ "ทำ app mobile แบบ jet fitness" โดยมีฟีเจอร์ครบถ้วนสำหรับการติดตามการออกกำลังกาย การจัดการเวิร์กเอาท์ และการดูสถิติต่างๆ
+## แพลตฟอร์มที่รองรับ
+- ✅ Android
+- ✅ iOS
+- ✅ Web
 
-ใช้เทคโนโลยี React Native/Expo ทำให้รองรับทั้ง iOS และ Android ด้วยโค้ดเดียว
+## หมายเหตุ
+แอปพลิเคชันนี้สร้างตามคำขอ "ทำ app mobile แบบ jet fitness" โดยใช้ **Flutter** 
+เป็นเฟรมเวิร์กหลัก ทำให้มีประสิทธิภาพสูงและรองรับทั้ง iOS และ Android ด้วยโค้ดเดียว
+
+Flutter ให้ประสิทธิภาพที่ดีกว่า React Native และมี UI ที่สวยงามเป็นธรรมชาติ

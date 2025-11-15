@@ -1,3 +1,0 @@
-# This is a placeholder for favicon.png
-# For a production app, replace this with an actual 48x48 PNG image
-# This is used for web version of the app

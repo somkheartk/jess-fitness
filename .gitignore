@@ -1,7 +1,19 @@
+# Flutter/Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+
+# React Native (legacy - can be removed)
 node_modules/
 .expo/
 dist/
 npm-debug.*
+
+# Mobile
 *.jks
 *.p8
 *.p12
@@ -9,5 +21,21 @@ npm-debug.*
 *.mobileprovision
 *.orig.*
 web-build/
+
+# IDE
 .DS_Store
 *.log
+.idea/
+.vscode/
+
+# Android
+android/.gradle/
+android/app/debug/
+android/app/profile/
+android/app/release/
+
+# iOS
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec

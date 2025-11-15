@@ -1,6 +1,6 @@
 # Jess Fitness - Mobile Fitness App 💪
 
-A comprehensive mobile fitness application built with React Native and Expo, inspired by Jet Fitness. Track your workouts, browse exercises, and monitor your fitness progress all in one place!
+A comprehensive mobile fitness application built with **Flutter**, inspired by Jet Fitness. Track your workouts, browse exercises, and monitor your fitness progress all in one place!
 
 ## Features
 
@@ -12,18 +12,18 @@ A comprehensive mobile fitness application built with React Native and Expo, ins
 
 ## Tech Stack
 
-- React Native
-- Expo
-- React Navigation
-- JavaScript/ES6+
+- Flutter
+- Dart
+- Material Design 3
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js (v14 or higher)
-- npm or yarn
-- Expo CLI (optional, will be installed automatically)
+- Flutter SDK (3.0.0 or higher)
+- Dart SDK
+- Android Studio / Xcode (for mobile development)
+- VS Code or Android Studio (IDE)
 
 ### Installation
 
@@ -35,41 +35,39 @@ cd jess-fitness
 
 2. Install dependencies:
 ```bash
-npm install
+flutter pub get
 ```
 
-3. Start the development server:
+3. Run the app:
 ```bash
-npm start
+flutter run
 ```
 
-4. Run on your device:
-- Install the Expo Go app on your iOS or Android device
-- Scan the QR code displayed in your terminal or browser
-- Or press `a` for Android emulator or `i` for iOS simulator
+## Available Commands
 
-## Available Scripts
-
-- `npm start` - Start the Expo development server
-- `npm run android` - Run on Android device/emulator
-- `npm run ios` - Run on iOS simulator (macOS only)
-- `npm run web` - Run in web browser
+- `flutter pub get` - Install dependencies
+- `flutter run` - Run the app on connected device/emulator
+- `flutter build apk` - Build Android APK
+- `flutter build ios` - Build iOS app (macOS only)
+- `flutter test` - Run tests
 
 ## Project Structure
 
 ```
 jess-fitness/
-├── src/
+├── lib/
+│   ├── main.dart               # Main app entry point
 │   ├── screens/
-│   │   ├── HomeScreen.js       # Home dashboard
-│   │   ├── WorkoutScreen.js    # Workout tracker
-│   │   ├── ExercisesScreen.js  # Exercise library
-│   │   └── ProfileScreen.js    # User profile
-│   └── components/             # Reusable components
+│   │   ├── home_screen.dart       # Home dashboard
+│   │   ├── workout_screen.dart    # Workout tracker
+│   │   ├── exercises_screen.dart  # Exercise library
+│   │   └── profile_screen.dart    # User profile
+│   └── widgets/                # Reusable widgets
 ├── assets/                     # Images, icons, fonts
-├── App.js                      # Main app component
-├── app.json                    # Expo configuration
-└── package.json               # Dependencies
+├── android/                    # Android specific files
+├── ios/                        # iOS specific files
+├── test/                       # Unit and widget tests
+└── pubspec.yaml               # Dependencies
 
 ```
 
@@ -78,7 +76,7 @@ jess-fitness/
 ### Home Screen
 - Quick stats overview (workouts, active days, calories)
 - Browse workout categories (Strength, Cardio, Flexibility, HIIT, Yoga, Pilates)
-- Beautiful card-based UI
+- Beautiful card-based UI with color coding
 
 ### Workout Screen
 - View your workout plan
@@ -95,9 +93,15 @@ jess-fitness/
 
 ### Profile Screen
 - View comprehensive statistics
-- Track goals and progress
+- Track goals and progress with visual indicators
 - Unlock achievements
 - Manage settings and preferences
+
+## Platform Support
+
+- ✅ Android
+- ✅ iOS
+- ✅ Web (with minor adjustments)
 
 ## Contributing
 
@@ -109,4 +113,4 @@ ISC
 
 ## Author
 
-Created with ❤️ for fitness enthusiasts
+Created with ❤️ for fitness enthusiasts using Flutter
