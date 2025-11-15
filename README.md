@@ -4,6 +4,7 @@ A comprehensive mobile fitness application built with **Flutter**, inspired by J
 
 ## Features
 
+- 🔐 **Login Screen**: Beautiful authentication with email/password and social login options
 - 🏠 **Home Dashboard**: View fitness categories and quick stats
 - 💪 **Workout Tracker**: Manage and track your workout routines
 - 📚 **Exercise Library**: Browse and search through a comprehensive exercise database
@@ -56,22 +57,33 @@ flutter run
 ```
 jess-fitness/
 ├── lib/
-│   ├── main.dart               # Main app entry point
+│   ├── main.dart                  # Main app entry point
 │   ├── screens/
+│   │   ├── login_screen.dart      # Login/Authentication
 │   │   ├── home_screen.dart       # Home dashboard
 │   │   ├── workout_screen.dart    # Workout tracker
 │   │   ├── exercises_screen.dart  # Exercise library
 │   │   └── profile_screen.dart    # User profile
-│   └── widgets/                # Reusable widgets
-├── assets/                     # Images, icons, fonts
-├── android/                    # Android specific files
-├── ios/                        # iOS specific files
-├── test/                       # Unit and widget tests
-└── pubspec.yaml               # Dependencies
+│   └── widgets/                   # Reusable widgets
+├── assets/                        # Images, icons, fonts
+├── android/                       # Android specific files
+├── ios/                           # iOS specific files
+├── test/                          # Unit and widget tests
+└── pubspec.yaml                   # Dependencies
 
 ```
 
 ## Features in Detail
+
+### Login Screen
+- Beautiful gradient design with app branding
+- Email and password authentication with validation
+- Password visibility toggle
+- Forgot password functionality
+- Social login buttons (Google, Facebook)
+- Sign up link for new users
+- Loading state with spinner
+- Smooth navigation to main app after login
 
 ### Home Screen
 - Quick stats overview (workouts, active days, calories)

@@ -3,6 +3,7 @@ import 'screens/home_screen.dart';
 import 'screens/workout_screen.dart';
 import 'screens/exercises_screen.dart';
 import 'screens/profile_screen.dart';
+import 'screens/login_screen.dart';
 
 void main() {
   runApp(const JessFitnessApp());
@@ -23,7 +24,7 @@ class JessFitnessApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const MainNavigationScreen(),
+      home: const LoginScreen(),
     );
   }
 }
