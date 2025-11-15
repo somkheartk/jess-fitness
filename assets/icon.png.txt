@@ -1,0 +1,3 @@
+# This is a placeholder for icon.png
+# For a production app, replace this with an actual 1024x1024 PNG image
+# The icon should represent the Jess Fitness brand
