@@ -76,7 +76,7 @@ class ProfileScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 6),
                   const Text(
-                    'MEMBER SINCE JANUARY 2024',
+                    'MEMBER SINCE AUGUST 2024',
                     style: TextStyle(
                       fontSize: 11,
                       color: Colors.white70,
@@ -94,10 +94,10 @@ class ProfileScreen extends StatelessWidget {
               color: const Color(0xFF1A1A1A),
               child: Row(
                 children: [
-                  Expanded(child: _buildStatCard('150', 'TOTAL\nWORKOUTS')),
-                  Expanded(child: _buildStatCard('112H', 'TIME\nTRAINED')),
-                  Expanded(child: _buildStatCard('52.5K', 'CALORIES\nBURNED')),
-                  Expanded(child: _buildStatCard('12🔥', 'DAY\nSTREAK')),
+                  Expanded(child: _buildStatCard('247', 'TOTAL\nWORKOUTS')),
+                  Expanded(child: _buildStatCard('186H', 'TIME\nTRAINED')),
+                  Expanded(child: _buildStatCard('78.3K', 'CALORIES\nBURNED')),
+                  Expanded(child: _buildStatCard('21🔥', 'DAY\nSTREAK')),
                 ],
               ),
             ),
@@ -122,11 +122,11 @@ class ProfileScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 16),
-                  _buildGoalCard('WORKOUT 5 DAYS/WEEK', 80, 4, 5),
+                  _buildGoalCard('WORKOUT 5 DAYS/WEEK', 100, 5, 5),
                   const SizedBox(height: 16),
-                  _buildGoalCard('BURN 3000 CAL/WEEK', 65, 1950, 3000),
+                  _buildGoalCard('BURN 3500 CAL/WEEK', 78, 2730, 3500),
                   const SizedBox(height: 16),
-                  _buildGoalCard('30-DAY STREAK', 40, 12, 30),
+                  _buildGoalCard('30-DAY STREAK', 70, 21, 30),
                 ],
               ),
             ),

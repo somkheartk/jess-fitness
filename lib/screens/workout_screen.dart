@@ -41,6 +41,22 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
       'calories': 400,
       'completed': false,
     },
+    {
+      'id': 5,
+      'name': 'HIIT Cardio Blast',
+      'duration': '35 min',
+      'exercises': 7,
+      'calories': 420,
+      'completed': false,
+    },
+    {
+      'id': 6,
+      'name': 'Total Body Strength',
+      'duration': '55 min',
+      'exercises': 11,
+      'calories': 480,
+      'completed': false,
+    },
   ];
 
   void toggleWorkout(int id) {

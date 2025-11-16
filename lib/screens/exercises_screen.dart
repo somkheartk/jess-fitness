@@ -24,6 +24,16 @@ class _ExercisesScreenState extends State<ExercisesScreen> {
     {'id': 8, 'name': 'Mountain Climbers', 'category': 'Cardio', 'difficulty': 'Intermediate', 'sets': '3x20'},
     {'id': 9, 'name': 'Bicycle Crunches', 'category': 'Core', 'difficulty': 'Beginner', 'sets': '3x20'},
     {'id': 10, 'name': 'Lunges', 'category': 'Strength', 'difficulty': 'Beginner', 'sets': '3x12'},
+    {'id': 11, 'name': 'Bench Press', 'category': 'Strength', 'difficulty': 'Intermediate', 'sets': '4x10'},
+    {'id': 12, 'name': 'Jump Rope', 'category': 'Cardio', 'difficulty': 'Beginner', 'sets': '5x2 min'},
+    {'id': 13, 'name': 'Pull-ups', 'category': 'Strength', 'difficulty': 'Advanced', 'sets': '3x8'},
+    {'id': 14, 'name': 'Leg Press', 'category': 'Strength', 'difficulty': 'Intermediate', 'sets': '4x12'},
+    {'id': 15, 'name': 'Box Jumps', 'category': 'Cardio', 'difficulty': 'Advanced', 'sets': '3x15'},
+    {'id': 16, 'name': 'Russian Twists', 'category': 'Core', 'difficulty': 'Intermediate', 'sets': '3x30'},
+    {'id': 17, 'name': 'Shoulder Press', 'category': 'Strength', 'difficulty': 'Intermediate', 'sets': '3x12'},
+    {'id': 18, 'name': 'Stretching', 'category': 'Flexibility', 'difficulty': 'Beginner', 'sets': '15 min'},
+    {'id': 19, 'name': 'Kettlebell Swings', 'category': 'Strength', 'difficulty': 'Advanced', 'sets': '4x15'},
+    {'id': 20, 'name': 'Cycling', 'category': 'Cardio', 'difficulty': 'Intermediate', 'sets': '40 min'},
   ];
 
   List<Map<String, dynamic>> get filteredExercises {
