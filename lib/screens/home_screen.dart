@@ -6,48 +6,78 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFF1A1A1A),
       appBar: AppBar(
         title: const Text(
-          'Jess Fitness',
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          'JESS FITNESS',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w900,
+            letterSpacing: 2,
+          ),
         ),
-        backgroundColor: const Color(0xFF6200EE),
+        backgroundColor: const Color(0xFF1A1A1A),
+        elevation: 0,
+        centerTitle: true,
       ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Header Section
+            // Header Section with Red Accent
             Container(
               width: double.infinity,
-              padding: const EdgeInsets.all(20),
-              color: Colors.white,
+              padding: const EdgeInsets.all(24),
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    const Color(0xFFE31E24),
+                    const Color(0xFFE31E24).withOpacity(0.8),
+                  ],
+                ),
+              ),
               child: const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Welcome to Jess Fitness! 💪',
+                    'UNLEASH YOUR',
                     style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xFF333333),
+                      fontSize: 16,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.white70,
+                      letterSpacing: 2,
                     ),
                   ),
-                  SizedBox(height: 5),
+                  Text(
+                    'POTENTIAL',
+                    style: TextStyle(
+                      fontSize: 32,
+                      fontWeight: FontWeight.w900,
+                      color: Colors.white,
+                      letterSpacing: 2,
+                    ),
+                  ),
+                  SizedBox(height: 8),
                   Text(
                     'Choose your workout category',
-                    style: TextStyle(fontSize: 16, color: Color(0xFF666666)),
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w400,
+                    ),
                   ),
                 ],
               ),
             ),
             
-            const SizedBox(height: 10),
+            const SizedBox(height: 20),
             
-            // Stats Section
+            // Stats Section - Dark Cards
             Container(
-              padding: const EdgeInsets.all(20),
-              color: Colors.white,
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              color: const Color(0xFF1A1A1A),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
@@ -58,34 +88,37 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             
-            const SizedBox(height: 10),
+            const SizedBox(height: 24),
             
             // Categories Section
             const Padding(
-              padding: EdgeInsets.all(20),
+              padding: EdgeInsets.symmetric(horizontal: 20),
               child: Text(
-                'Workout Categories',
+                'WORKOUT CATEGORIES',
                 style: TextStyle(
                   fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xFF333333),
+                  fontWeight: FontWeight.w900,
+                  color: Colors.white,
+                  letterSpacing: 1.5,
                 ),
               ),
             ),
             
-            // Category Cards
+            const SizedBox(height: 16),
+            
+            // Category Cards with Bold Design
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Wrap(
                 spacing: 15,
                 runSpacing: 15,
                 children: [
-                  _buildCategoryCard('Strength Training', '12 workouts', const Color(0xFFFF6B6B)),
-                  _buildCategoryCard('Cardio', '8 workouts', const Color(0xFF4ECDC4)),
-                  _buildCategoryCard('Flexibility', '6 workouts', const Color(0xFF45B7D1)),
-                  _buildCategoryCard('HIIT', '10 workouts', const Color(0xFFFFA07A)),
-                  _buildCategoryCard('Yoga', '7 workouts', const Color(0xFF98D8C8)),
-                  _buildCategoryCard('Pilates', '5 workouts', const Color(0xFFF7B731)),
+                  _buildCategoryCard('STRENGTH', '12 workouts', const Color(0xFFE31E24)),
+                  _buildCategoryCard('CARDIO', '8 workouts', const Color(0xFF2A2A2A)),
+                  _buildCategoryCard('FLEXIBILITY', '6 workouts', const Color(0xFFE31E24)),
+                  _buildCategoryCard('HIIT', '10 workouts', const Color(0xFF2A2A2A)),
+                  _buildCategoryCard('YOGA', '7 workouts', const Color(0xFFE31E24)),
+                  _buildCategoryCard('PILATES', '5 workouts', const Color(0xFF2A2A2A)),
                 ],
               ),
             ),
@@ -98,56 +131,102 @@ class HomeScreen extends StatelessWidget {
   }
 
   Widget _buildStatBox(String number, String label) {
-    return Column(
-      children: [
-        Text(
-          number,
-          style: const TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-            color: Color(0xFF6200EE),
-          ),
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+      decoration: BoxDecoration(
+        color: const Color(0xFF2A2A2A),
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(
+          color: const Color(0xFF3A3A3A),
+          width: 1,
         ),
-        const SizedBox(height: 5),
-        Text(
-          label,
-          style: const TextStyle(
-            fontSize: 14,
-            color: Color(0xFF666666),
+      ),
+      child: Column(
+        children: [
+          Text(
+            number,
+            style: const TextStyle(
+              fontSize: 28,
+              fontWeight: FontWeight.w900,
+              color: Color(0xFFE31E24),
+            ),
           ),
-        ),
-      ],
+          const SizedBox(height: 4),
+          Text(
+            label.toUpperCase(),
+            style: const TextStyle(
+              fontSize: 11,
+              color: Colors.white70,
+              fontWeight: FontWeight.w600,
+              letterSpacing: 1,
+            ),
+          ),
+        ],
+      ),
     );
   }
 
   Widget _buildCategoryCard(String name, String workouts, Color color) {
     return Container(
       width: 165,
+      height: 140,
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
         color: color,
-        borderRadius: BorderRadius.circular(15),
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(
+          color: color == const Color(0xFFE31E24) 
+              ? const Color(0xFFE31E24) 
+              : const Color(0xFF3A3A3A),
+          width: 2,
+        ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.1),
-            blurRadius: 8,
-            offset: const Offset(0, 2),
+            color: color == const Color(0xFFE31E24)
+                ? const Color(0xFFE31E24).withOpacity(0.3)
+                : Colors.black.withOpacity(0.3),
+            blurRadius: 12,
+            offset: const Offset(0, 4),
           ),
         ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
             name,
             style: const TextStyle(
               fontSize: 18,
-              fontWeight: FontWeight.bold,
+              fontWeight: FontWeight.w900,
               color: Colors.white,
+              letterSpacing: 1,
             ),
           ),
-          const SizedBox(height: 5),
-          Text(
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                height: 3,
+                width: 40,
+                color: Colors.white,
+              ),
+              const SizedBox(height: 8),
+              Text(
+                workouts.toUpperCase(),
+                style: TextStyle(
+                  fontSize: 12,
+                  color: Colors.white.withOpacity(0.8),
+                  fontWeight: FontWeight.w600,
+                  letterSpacing: 1,
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
             workouts,
             style: TextStyle(
               fontSize: 14,
