@@ -55,41 +55,71 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFF1A1A1A),
       appBar: AppBar(
         title: const Text(
-          'My Workouts',
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          'MY WORKOUTS',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w900,
+            letterSpacing: 2,
+          ),
         ),
-        backgroundColor: const Color(0xFF6200EE),
+        backgroundColor: const Color(0xFF1A1A1A),
+        elevation: 0,
+        centerTitle: true,
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
             Container(
               width: double.infinity,
-              padding: const EdgeInsets.all(20),
-              color: Colors.white,
+              padding: const EdgeInsets.all(24),
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    const Color(0xFFE31E24),
+                    const Color(0xFFE31E24).withOpacity(0.8),
+                  ],
+                ),
+              ),
               child: const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'My Workout Plan',
+                    'YOUR TRAINING',
                     style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xFF333333),
+                      fontSize: 16,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.white70,
+                      letterSpacing: 2,
                     ),
                   ),
-                  SizedBox(height: 5),
+                  Text(
+                    'PROGRAM',
+                    style: TextStyle(
+                      fontSize: 32,
+                      fontWeight: FontWeight.w900,
+                      color: Colors.white,
+                      letterSpacing: 2,
+                    ),
+                  ),
+                  SizedBox(height: 8),
                   Text(
                     'Track your fitness journey',
-                    style: TextStyle(fontSize: 16, color: Color(0xFF666666)),
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w400,
+                    ),
                   ),
                 ],
               ),
             ),
             
-            const SizedBox(height: 15),
+            const SizedBox(height: 20),
             
             ListView.builder(
               shrinkWrap: true,
@@ -102,29 +132,29 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
               },
             ),
             
-            const SizedBox(height: 15),
+            const SizedBox(height: 20),
             
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15),
               child: Container(
                 width: double.infinity,
-                padding: const EdgeInsets.all(20),
+                padding: const EdgeInsets.symmetric(vertical: 18),
                 decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(15),
+                  color: const Color(0xFF2A2A2A),
+                  borderRadius: BorderRadius.circular(12),
                   border: Border.all(
-                    color: const Color(0xFF6200EE),
+                    color: const Color(0xFFE31E24),
                     width: 2,
-                    style: BorderStyle.solid,
                   ),
                 ),
                 child: const Center(
                   child: Text(
-                    '+ Add Custom Workout',
+                    '+ ADD CUSTOM WORKOUT',
                     style: TextStyle(
-                      color: Color(0xFF6200EE),
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
+                      color: Color(0xFFE31E24),
+                      fontSize: 14,
+                      fontWeight: FontWeight.w900,
+                      letterSpacing: 1.5,
                     ),
                   ),
                 ),
@@ -145,16 +175,19 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
       margin: const EdgeInsets.only(bottom: 15),
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: isCompleted ? const Color(0xFFE8F5E9) : Colors.white,
-        borderRadius: BorderRadius.circular(15),
-        border: isCompleted
-            ? Border.all(color: const Color(0xFF4CAF50), width: 2)
-            : null,
+        color: const Color(0xFF2A2A2A),
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(
+          color: isCompleted ? const Color(0xFFE31E24) : const Color(0xFF3A3A3A),
+          width: 2,
+        ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
-            blurRadius: 8,
-            offset: const Offset(0, 2),
+            color: isCompleted 
+                ? const Color(0xFFE31E24).withOpacity(0.3)
+                : Colors.black.withOpacity(0.3),
+            blurRadius: 12,
+            offset: const Offset(0, 4),
           ),
         ],
       ),
@@ -166,40 +199,42 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
             children: [
               Expanded(
                 child: Text(
-                  workout['name'],
+                  workout['name'].toString().toUpperCase(),
                   style: const TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xFF333333),
+                    fontSize: 18,
+                    fontWeight: FontWeight.w900,
+                    color: Colors.white,
+                    letterSpacing: 1,
                   ),
                 ),
               ),
               if (isCompleted)
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                   decoration: BoxDecoration(
-                    color: const Color(0xFF4CAF50),
-                    borderRadius: BorderRadius.circular(12),
+                    color: const Color(0xFFE31E24),
+                    borderRadius: BorderRadius.circular(8),
                   ),
                   child: const Text(
-                    '✓ Completed',
+                    '✓ DONE',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold,
+                      fontSize: 11,
+                      fontWeight: FontWeight.w900,
+                      letterSpacing: 1,
                     ),
                   ),
                 ),
             ],
           ),
           
-          const SizedBox(height: 15),
+          const SizedBox(height: 16),
           
           Container(
-            padding: const EdgeInsets.all(10),
+            padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
-              color: const Color(0xFFF8F8F8),
-              borderRadius: BorderRadius.circular(10),
+              color: const Color(0xFF1A1A1A),
+              borderRadius: BorderRadius.circular(8),
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -211,7 +246,7 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
             ),
           ),
           
-          const SizedBox(height: 15),
+          const SizedBox(height: 16),
           
           SizedBox(
             width: double.infinity,
@@ -219,19 +254,24 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
               onPressed: () => toggleWorkout(workout['id']),
               style: ElevatedButton.styleFrom(
                 backgroundColor: isCompleted
-                    ? const Color(0xFFFF9800)
-                    : const Color(0xFF6200EE),
-                padding: const EdgeInsets.symmetric(vertical: 15),
+                    ? const Color(0xFF2A2A2A)
+                    : const Color(0xFFE31E24),
+                foregroundColor: Colors.white,
+                padding: const EdgeInsets.symmetric(vertical: 14),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
+                side: isCompleted 
+                    ? const BorderSide(color: Color(0xFF3A3A3A), width: 2)
+                    : null,
               ),
               child: Text(
-                isCompleted ? 'Mark Incomplete' : 'Start Workout',
+                isCompleted ? 'MARK INCOMPLETE' : 'START WORKOUT',
                 style: const TextStyle(
                   color: Colors.white,
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
+                  fontSize: 14,
+                  fontWeight: FontWeight.w900,
+                  letterSpacing: 1.5,
                 ),
               ),
             ),
@@ -245,10 +285,14 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
     return Column(
       children: [
         Text(icon, style: const TextStyle(fontSize: 20)),
-        const SizedBox(height: 5),
+        const SizedBox(height: 4),
         Text(
           text,
-          style: const TextStyle(fontSize: 14, color: Color(0xFF666666)),
+          style: const TextStyle(
+            fontSize: 12,
+            color: Colors.white70,
+            fontWeight: FontWeight.w600,
+          ),
         ),
       ],
     );
