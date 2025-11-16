@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
+import '../screens/login_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -6,295 +7,136 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF1A1A1A),
-      appBar: AppBar(
-        title: const Text(
-          'PROFILE',
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.w900,
-            letterSpacing: 2,
-          ),
-        ),
-        backgroundColor: const Color(0xFF1A1A1A),
-        elevation: 0,
-        centerTitle: true,
-      ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            // Profile Header - Red Gradient
-            Container(
-              width: double.infinity,
-              padding: const EdgeInsets.all(30),
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [
-                    const Color(0xFFE31E24),
-                    const Color(0xFFE31E24).withOpacity(0.8),
+      backgroundColor: const Color(0xFFEEF1F5),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              // Header
+              Container(
+                width: double.infinity,
+                padding: const EdgeInsets.all(24),
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [Color(0xFF7B61FF), Color(0xFF9B7FFF)],
+                  ),
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(30),
+                    bottomRight: Radius.circular(30),
+                  ),
+                ),
+                child: Column(
+                  children: [
+                    Container(
+                      width: 100,
+                      height: 100,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        shape: BoxShape.circle,
+                        border: Border.all(color: Colors.white, width: 4),
+                      ),
+                      child: const Icon(Icons.person, size: 50, color: Color(0xFF7B61FF)),
+                    ),
+                    const SizedBox(height: 16),
+                    const Text(
+                      'John Doe',
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                    const SizedBox(height: 8),
+                    const Text(
+                      'john.doe@example.com',
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.white70,
+                      ),
+                    ),
                   ],
                 ),
               ),
-              child: Column(
-                children: [
-                  Container(
-                    width: 90,
-                    height: 90,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      shape: BoxShape.circle,
-                      border: Border.all(
-                        color: Colors.white,
-                        width: 3,
-                      ),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withOpacity(0.3),
-                          blurRadius: 12,
-                          offset: const Offset(0, 4),
-                        ),
-                      ],
-                    ),
-                    child: const Center(
-                      child: Text(
-                        '💪',
-                        style: TextStyle(fontSize: 45),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 16),
-                  const Text(
-                    'FITNESS ENTHUSIAST',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w900,
-                      color: Colors.white,
-                      letterSpacing: 1.5,
-                    ),
-                  ),
-                  const SizedBox(height: 6),
-                  const Text(
-                    'MEMBER SINCE AUGUST 2024',
-                    style: TextStyle(
-                      fontSize: 11,
-                      color: Colors.white70,
-                      fontWeight: FontWeight.w600,
-                      letterSpacing: 1,
-                    ),
-                  ),
-                ],
-              ),
-            ),
 
-            // Stats Grid - Dark Cards
-            Container(
-              padding: const EdgeInsets.all(12),
-              color: const Color(0xFF1A1A1A),
-              child: Row(
-                children: [
-                  Expanded(child: _buildStatCard('247', 'TOTAL\nWORKOUTS')),
-                  Expanded(child: _buildStatCard('186H', 'TIME\nTRAINED')),
-                  Expanded(child: _buildStatCard('78.3K', 'CALORIES\nBURNED')),
-                  Expanded(child: _buildStatCard('21🔥', 'DAY\nSTREAK')),
-                ],
-              ),
-            ),
+              const SizedBox(height: 24),
 
-            const SizedBox(height: 12),
-
-            // Goals Section - Dark Theme
-            Container(
-              width: double.infinity,
-              padding: const EdgeInsets.all(20),
-              color: const Color(0xFF1A1A1A),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    'GOALS PROGRESS',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w900,
-                      color: Colors.white,
-                      letterSpacing: 1.5,
-                    ),
-                  ),
-                  const SizedBox(height: 16),
-                  _buildGoalCard('WORKOUT 5 DAYS/WEEK', 100, 5, 5),
-                  const SizedBox(height: 16),
-                  _buildGoalCard('BURN 3500 CAL/WEEK', 78, 2730, 3500),
-                  const SizedBox(height: 16),
-                  _buildGoalCard('30-DAY STREAK', 70, 21, 30),
-                ],
-              ),
-            ),
-
-            const SizedBox(height: 12),
-
-            // Achievements Section - Dark Theme
-            Container(
-              width: double.infinity,
-              padding: const EdgeInsets.all(20),
-              color: const Color(0xFF1A1A1A),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    'ACHIEVEMENTS',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w900,
-                      color: Colors.white,
-                      letterSpacing: 1.5,
-                    ),
-                  ),
-                  const SizedBox(height: 16),
-                  Wrap(
-                    spacing: 10,
-                    runSpacing: 10,
-                    children: [
-                      _buildAchievementCard('🏆', 'FIRST\nWORKOUT', true),
-                      _buildAchievementCard('⭐', '100\nWORKOUTS', true),
-                      _buildAchievementCard('🔥', '7-DAY\nSTREAK', true),
-                      _buildAchievementCard('💪', 'IRON\nWILL', false),
-                      _buildAchievementCard('🎯', 'GOAL\nMASTER', false),
-                      _buildAchievementCard('👑', 'FITNESS\nKING', false),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-
-            const SizedBox(height: 12),
-
-            // Settings Section - Dark Theme
-            Container(
-              width: double.infinity,
-              padding: const EdgeInsets.all(20),
-              color: const Color(0xFF1A1A1A),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    'SETTINGS',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w900,
-                      color: Colors.white,
-                      letterSpacing: 1.5,
-                    ),
-                  ),
-                  const SizedBox(height: 16),
-                  _buildSettingItem('EDIT PROFILE'),
-                  _buildSettingItem('NOTIFICATIONS'),
-                  _buildSettingItem('UNITS & PREFERENCES'),
-                  _buildSettingItem('HELP & SUPPORT'),
-                ],
-              ),
-            ),
-
-            const SizedBox(height: 20),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildStatCard(String number, String label) {
-    return Container(
-      margin: const EdgeInsets.all(6),
-      padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
-      decoration: BoxDecoration(
-        color: const Color(0xFF2A2A2A),
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(
-          color: const Color(0xFF3A3A3A),
-          width: 1,
-        ),
-      ),
-      child: Column(
-        children: [
-          Text(
-            number,
-            style: const TextStyle(
-              fontSize: 22,
-              fontWeight: FontWeight.w900,
-              color: Color(0xFFE31E24),
-            ),
-          ),
-          const SizedBox(height: 6),
-          Text(
-            label,
-            textAlign: TextAlign.center,
-            style: const TextStyle(
-              fontSize: 10,
-              color: Colors.white70,
-              fontWeight: FontWeight.w700,
-              letterSpacing: 0.5,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildGoalCard(String name, int progress, int current, int target) {
-    return Container(
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: const Color(0xFF2A2A2A),
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(
-          color: const Color(0xFF3A3A3A),
-          width: 1,
-        ),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Expanded(
-                child: Text(
-                  name,
-                  style: const TextStyle(
-                    fontSize: 13,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w700,
-                    letterSpacing: 0.5,
-                  ),
+              // Stats
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Row(
+                  children: [
+                    Expanded(child: _buildStatCard('247', 'Workouts', const Color(0xFFFF6B6B))),
+                    const SizedBox(width: 16),
+                    Expanded(child: _buildStatCard('14', 'Streak', const Color(0xFF7B61FF))),
+                  ],
                 ),
               ),
-              Text(
-                '$progress%',
-                style: const TextStyle(
-                  fontSize: 16,
-                  color: Color(0xFFE31E24),
-                  fontWeight: FontWeight.w900,
+
+              const SizedBox(height: 24),
+
+              // Menu Items
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Column(
+                  children: [
+                    _buildMenuItem(Icons.edit, 'Edit Profile', () {}),
+                    const SizedBox(height: 12),
+                    _buildMenuItem(Icons.notifications_outlined, 'Notifications', () {}),
+                    const SizedBox(height: 12),
+                    _buildMenuItem(Icons.settings, 'Settings', () {}),
+                    const SizedBox(height: 12),
+                    _buildMenuItem(Icons.help_outline, 'Help & Support', () {}),
+                    const SizedBox(height: 12),
+                    _buildMenuItem(
+                      Icons.logout,
+                      'Logout',
+                      () {
+                        Navigator.of(context).pushAndRemoveUntil(
+                          MaterialPageRoute(builder: (context) => const LoginScreen()),
+                          (route) => false,
+                        );
+                      },
+                      isLogout: true,
+                    ),
+                  ],
                 ),
               ),
+
+              const SizedBox(height: 24),
             ],
           ),
-          const SizedBox(height: 10),
-          ClipRRect(
-            borderRadius: BorderRadius.circular(6),
-            child: LinearProgressIndicator(
-              value: progress / 100,
-              minHeight: 10,
-              backgroundColor: const Color(0xFF1A1A1A),
-              valueColor: const AlwaysStoppedAnimation<Color>(Color(0xFFE31E24)),
+        ),
+      ),
+    );
+  }
+
+  static Widget _buildStatCard(String value, String label, Color color) {
+    return Container(
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: color.withOpacity(0.15),
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(color: color.withOpacity(0.3), width: 1),
+      ),
+      child: Column(
+        children: [
+          Text(
+            value,
+            style: TextStyle(
+              fontSize: 32,
+              fontWeight: FontWeight.bold,
+              color: color,
             ),
           ),
           const SizedBox(height: 8),
           Text(
-            '$current / $target',
+            label,
             style: const TextStyle(
-              fontSize: 11,
-              color: Colors.white54,
-              fontWeight: FontWeight.w600,
+              fontSize: 14,
+              color: Color(0xFF2D3142),
+              fontWeight: FontWeight.w500,
             ),
           ),
         ],
@@ -302,93 +144,63 @@ class ProfileScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildAchievementCard(String icon, String name, bool unlocked) {
+  static Widget _buildMenuItem(IconData icon, String title, VoidCallback onTap, {bool isLogout = false}) {
     return Container(
-      width: 100,
-      height: 100,
-      padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: unlocked ? const Color(0xFF2A2A2A) : const Color(0xFF1A1A1A),
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(
-          color: unlocked ? const Color(0xFFE31E24) : const Color(0xFF3A3A3A),
-          width: 2,
-        ),
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.04),
+            blurRadius: 10,
+            offset: const Offset(0, 4),
+          ),
+        ],
       ),
-      child: Stack(
-        children: [
-          Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          onTap: onTap,
+          borderRadius: BorderRadius.circular(16),
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Row(
               children: [
-                Text(
-                  icon,
-                  style: TextStyle(
-                    fontSize: 32,
-                    opacity: unlocked ? 1.0 : 0.3,
+                Container(
+                  width: 50,
+                  height: 50,
+                  decoration: BoxDecoration(
+                    color: isLogout
+                        ? const Color(0xFFFF6B6B).withOpacity(0.15)
+                        : const Color(0xFF7B61FF).withOpacity(0.15),
+                    borderRadius: BorderRadius.circular(14),
+                  ),
+                  child: Icon(
+                    icon,
+                    color: isLogout ? const Color(0xFFFF6B6B) : const Color(0xFF7B61FF),
+                    size: 24,
                   ),
                 ),
-                const SizedBox(height: 6),
-                Text(
-                  name,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 9,
-                    color: unlocked ? Colors.white : Colors.white30,
-                    fontWeight: FontWeight.w700,
-                    letterSpacing: 0.5,
+                const SizedBox(width: 16),
+                Expanded(
+                  child: Text(
+                    title,
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: isLogout ? const Color(0xFFFF6B6B) : const Color(0xFF2D3142),
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
+                ),
+                Icon(
+                  Icons.arrow_forward_ios_rounded,
+                  size: 16,
+                  color: Colors.grey[400],
                 ),
               ],
             ),
           ),
-          if (!unlocked)
-            Positioned.fill(
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.black.withOpacity(0.6),
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: const Center(
-                  child: Text('🔒', style: TextStyle(fontSize: 24)),
-                ),
-              ),
-            ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildSettingItem(String title) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 12),
-      padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
-      decoration: BoxDecoration(
-        color: const Color(0xFF2A2A2A),
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(
-          color: const Color(0xFF3A3A3A),
-          width: 1,
         ),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(
-            title,
-            style: const TextStyle(
-              fontSize: 13,
-              color: Colors.white,
-              fontWeight: FontWeight.w700,
-              letterSpacing: 0.5,
-            ),
-          ),
-          const Icon(
-            Icons.arrow_forward_ios,
-            size: 16,
-            color: Color(0xFFE31E24),
-          ),
-        ],
       ),
     );
   }
