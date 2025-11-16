@@ -22,12 +22,25 @@ See [JETTS_DESIGN_UPDATE.md](JETTS_DESIGN_UPDATE.md) for complete design documen
 - 👤 **Profile & Progress**: Goals tracking, achievements, statistics with red accents
 - 🎨 **Bold Design**: Jetts-inspired modern aesthetic with dark theme
 - 🔴 **High Energy**: Red and black color scheme for fitness motivation
+- 🌐 **Backend API**: Full REST API with NestJS + MongoDB
+- 🔒 **Authentication**: JWT-based secure authentication
+- 📱 **Service Layer**: Clean architecture with separated concerns
 
 ## Tech Stack
 
+### Frontend (Mobile App)
 - Flutter
 - Dart
 - Material Design 3
+- HTTP client for API communication
+
+### Backend API
+- NestJS - Progressive Node.js framework
+- MongoDB - NoSQL database
+- Mongoose - ODM for MongoDB
+- JWT - Token-based authentication
+- Passport - Authentication middleware
+- TypeScript
 
 ## Getting Started
 
@@ -35,8 +48,34 @@ See [JETTS_DESIGN_UPDATE.md](JETTS_DESIGN_UPDATE.md) for complete design documen
 
 - Flutter SDK (3.0.0 or higher)
 - Dart SDK
+- Node.js (v18 or higher) - for backend API
+- MongoDB (local or cloud) - for database
 - Android Studio / Xcode (for mobile development)
 - VS Code or Android Studio (IDE)
+
+### Quick Start
+
+See [QUICK_START.md](QUICK_START.md) for detailed setup instructions.
+
+**TL;DR:**
+
+1. Clone the repository
+2. Set up backend:
+   ```bash
+   cd backend
+   npm install
+   cp .env.example .env
+   # Edit .env with your MongoDB URI
+   npm run start:dev
+   ```
+
+3. Set up Flutter app:
+   ```bash
+   cd ..
+   flutter pub get
+   # Update lib/config/api_config.dart with backend URL
+   flutter run
+   ```
 
 ### Installation
 
@@ -46,12 +85,19 @@ git clone https://github.com/somkheartk/jess-fitness.git
 cd jess-fitness
 ```
 
-2. Install dependencies:
+2. Install Flutter dependencies:
 ```bash
 flutter pub get
 ```
 
-3. Run the app:
+3. Set up and run the backend (see [backend/README.md](backend/README.md)):
+```bash
+cd backend
+npm install
+npm run start:dev
+```
+
+4. Run the app:
 ```bash
 flutter run
 ```
@@ -70,6 +116,18 @@ flutter run
 jess-fitness/
 ├── lib/
 │   ├── main.dart                  # Main app entry point
+│   ├── config/
+│   │   └── api_config.dart        # API configuration
+│   ├── models/
+│   │   ├── user.dart              # User data model
+│   │   ├── workout.dart           # Workout data model
+│   │   └── exercise.dart          # Exercise data model
+│   ├── services/
+│   │   ├── api_service.dart       # Base HTTP service
+│   │   ├── auth_service.dart      # Authentication service
+│   │   ├── user_service.dart      # User management service
+│   │   ├── workout_service.dart   # Workout service
+│   │   └── exercise_service.dart  # Exercise service
 │   ├── screens/
 │   │   ├── login_screen.dart      # Login/Authentication
 │   │   ├── home_screen.dart       # Home dashboard
@@ -77,13 +135,33 @@ jess-fitness/
 │   │   ├── exercises_screen.dart  # Exercise library
 │   │   └── profile_screen.dart    # User profile
 │   └── widgets/                   # Reusable widgets
+├── backend/                       # NestJS API backend
+│   ├── src/
+│   │   ├── auth/                  # Authentication module
+│   │   ├── users/                 # Users module
+│   │   ├── workouts/              # Workouts module
+│   │   ├── exercises/             # Exercises module
+│   │   ├── app.module.ts          # Root module
+│   │   └── main.ts                # Entry point
+│   ├── .env.example               # Environment variables template
+│   └── README.md                  # Backend documentation
 ├── assets/                        # Images, icons, fonts
 ├── android/                       # Android specific files
 ├── ios/                           # iOS specific files
 ├── test/                          # Unit and widget tests
-└── pubspec.yaml                   # Dependencies
-
+└── pubspec.yaml                   # Flutter dependencies
 ```
+
+## API Documentation
+
+For complete API documentation and integration guide, see [API_DOCUMENTATION.md](API_DOCUMENTATION.md)
+
+**Key API Endpoints:**
+- `POST /api/auth/register` - Register new user
+- `POST /api/auth/login` - Login user
+- `GET /api/workouts` - Get workouts (requires auth)
+- `GET /api/exercises` - Get exercises (requires auth)
+- `GET /api/users/:id` - Get user profile (requires auth)
 
 ## Features in Detail
 
