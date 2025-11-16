@@ -6,158 +6,191 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFF1A1A1A),
       appBar: AppBar(
         title: const Text(
-          'Profile',
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          'PROFILE',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w900,
+            letterSpacing: 2,
+          ),
         ),
-        backgroundColor: const Color(0xFF6200EE),
+        backgroundColor: const Color(0xFF1A1A1A),
+        elevation: 0,
+        centerTitle: true,
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            // Profile Header
+            // Profile Header - Red Gradient
             Container(
               width: double.infinity,
               padding: const EdgeInsets.all(30),
-              color: const Color(0xFF6200EE),
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    const Color(0xFFE31E24),
+                    const Color(0xFFE31E24).withOpacity(0.8),
+                  ],
+                ),
+              ),
               child: Column(
                 children: [
                   Container(
-                    width: 80,
-                    height: 80,
-                    decoration: const BoxDecoration(
+                    width: 90,
+                    height: 90,
+                    decoration: BoxDecoration(
                       color: Colors.white,
                       shape: BoxShape.circle,
+                      border: Border.all(
+                        color: Colors.white,
+                        width: 3,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.3),
+                          blurRadius: 12,
+                          offset: const Offset(0, 4),
+                        ),
+                      ],
                     ),
                     child: const Center(
                       child: Text(
-                        '👤',
-                        style: TextStyle(fontSize: 40),
+                        '💪',
+                        style: TextStyle(fontSize: 45),
                       ),
                     ),
                   ),
-                  const SizedBox(height: 15),
+                  const SizedBox(height: 16),
                   const Text(
-                    'Fitness Enthusiast',
+                    'FITNESS ENTHUSIAST',
                     style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w900,
                       color: Colors.white,
+                      letterSpacing: 1.5,
                     ),
                   ),
-                  const SizedBox(height: 5),
-                  Text(
-                    'Member since January 2024',
+                  const SizedBox(height: 6),
+                  const Text(
+                    'MEMBER SINCE JANUARY 2024',
                     style: TextStyle(
-                      fontSize: 14,
-                      color: Colors.white.withOpacity(0.8),
+                      fontSize: 11,
+                      color: Colors.white70,
+                      fontWeight: FontWeight.w600,
+                      letterSpacing: 1,
                     ),
                   ),
                 ],
               ),
             ),
 
-            // Stats Grid
+            // Stats Grid - Dark Cards
             Container(
-              padding: const EdgeInsets.all(10),
-              color: Colors.white,
+              padding: const EdgeInsets.all(12),
+              color: const Color(0xFF1A1A1A),
               child: Row(
                 children: [
-                  Expanded(child: _buildStatCard('150', 'Total Workouts')),
-                  Expanded(child: _buildStatCard('112h', 'Time Trained')),
-                  Expanded(child: _buildStatCard('52.5k', 'Calories Burned')),
-                  Expanded(child: _buildStatCard('12 🔥', 'Day Streak')),
+                  Expanded(child: _buildStatCard('150', 'TOTAL\nWORKOUTS')),
+                  Expanded(child: _buildStatCard('112H', 'TIME\nTRAINED')),
+                  Expanded(child: _buildStatCard('52.5K', 'CALORIES\nBURNED')),
+                  Expanded(child: _buildStatCard('12🔥', 'DAY\nSTREAK')),
                 ],
               ),
             ),
 
-            const SizedBox(height: 10),
+            const SizedBox(height: 12),
 
-            // Goals Section
+            // Goals Section - Dark Theme
             Container(
               width: double.infinity,
               padding: const EdgeInsets.all(20),
-              color: Colors.white,
+              color: const Color(0xFF1A1A1A),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text(
-                    'Goals Progress',
+                    'GOALS PROGRESS',
                     style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xFF333333),
+                      fontSize: 18,
+                      fontWeight: FontWeight.w900,
+                      color: Colors.white,
+                      letterSpacing: 1.5,
                     ),
                   ),
-                  const SizedBox(height: 15),
-                  _buildGoalCard('Workout 5 days/week', 80, 4, 5),
-                  const SizedBox(height: 20),
-                  _buildGoalCard('Burn 3000 cal/week', 65, 1950, 3000),
-                  const SizedBox(height: 20),
-                  _buildGoalCard('30-day streak', 40, 12, 30),
+                  const SizedBox(height: 16),
+                  _buildGoalCard('WORKOUT 5 DAYS/WEEK', 80, 4, 5),
+                  const SizedBox(height: 16),
+                  _buildGoalCard('BURN 3000 CAL/WEEK', 65, 1950, 3000),
+                  const SizedBox(height: 16),
+                  _buildGoalCard('30-DAY STREAK', 40, 12, 30),
                 ],
               ),
             ),
 
-            const SizedBox(height: 10),
+            const SizedBox(height: 12),
 
-            // Achievements Section
+            // Achievements Section - Dark Theme
             Container(
               width: double.infinity,
               padding: const EdgeInsets.all(20),
-              color: Colors.white,
+              color: const Color(0xFF1A1A1A),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text(
-                    'Achievements',
+                    'ACHIEVEMENTS',
                     style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xFF333333),
+                      fontSize: 18,
+                      fontWeight: FontWeight.w900,
+                      color: Colors.white,
+                      letterSpacing: 1.5,
                     ),
                   ),
-                  const SizedBox(height: 15),
+                  const SizedBox(height: 16),
                   Wrap(
                     spacing: 10,
                     runSpacing: 10,
                     children: [
-                      _buildAchievementCard('🏆', 'First Workout', true),
-                      _buildAchievementCard('⭐', '100 Workouts', true),
-                      _buildAchievementCard('🔥', '7-Day Streak', true),
-                      _buildAchievementCard('💪', 'Iron Will', false),
-                      _buildAchievementCard('🎯', 'Goal Master', false),
-                      _buildAchievementCard('👑', 'Fitness King', false),
+                      _buildAchievementCard('🏆', 'FIRST\nWORKOUT', true),
+                      _buildAchievementCard('⭐', '100\nWORKOUTS', true),
+                      _buildAchievementCard('🔥', '7-DAY\nSTREAK', true),
+                      _buildAchievementCard('💪', 'IRON\nWILL', false),
+                      _buildAchievementCard('🎯', 'GOAL\nMASTER', false),
+                      _buildAchievementCard('👑', 'FITNESS\nKING', false),
                     ],
                   ),
                 ],
               ),
             ),
 
-            const SizedBox(height: 10),
+            const SizedBox(height: 12),
 
-            // Settings Section
+            // Settings Section - Dark Theme
             Container(
               width: double.infinity,
               padding: const EdgeInsets.all(20),
-              color: Colors.white,
+              color: const Color(0xFF1A1A1A),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text(
-                    'Settings',
+                    'SETTINGS',
                     style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xFF333333),
+                      fontSize: 18,
+                      fontWeight: FontWeight.w900,
+                      color: Colors.white,
+                      letterSpacing: 1.5,
                     ),
                   ),
-                  const SizedBox(height: 15),
-                  _buildSettingItem('Edit Profile'),
-                  _buildSettingItem('Notifications'),
-                  _buildSettingItem('Units & Preferences'),
-                  _buildSettingItem('Help & Support'),
+                  const SizedBox(height: 16),
+                  _buildSettingItem('EDIT PROFILE'),
+                  _buildSettingItem('NOTIFICATIONS'),
+                  _buildSettingItem('UNITS & PREFERENCES'),
+                  _buildSettingItem('HELP & SUPPORT'),
                 ],
               ),
             ),
@@ -170,25 +203,36 @@ class ProfileScreen extends StatelessWidget {
   }
 
   Widget _buildStatCard(String number, String label) {
-    return Padding(
-      padding: const EdgeInsets.all(15),
+    return Container(
+      margin: const EdgeInsets.all(6),
+      padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
+      decoration: BoxDecoration(
+        color: const Color(0xFF2A2A2A),
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(
+          color: const Color(0xFF3A3A3A),
+          width: 1,
+        ),
+      ),
       child: Column(
         children: [
           Text(
             number,
             style: const TextStyle(
-              fontSize: 28,
-              fontWeight: FontWeight.bold,
-              color: Color(0xFF6200EE),
+              fontSize: 22,
+              fontWeight: FontWeight.w900,
+              color: Color(0xFFE31E24),
             ),
           ),
-          const SizedBox(height: 5),
+          const SizedBox(height: 6),
           Text(
             label,
             textAlign: TextAlign.center,
             style: const TextStyle(
-              fontSize: 14,
-              color: Color(0xFF666666),
+              fontSize: 10,
+              color: Colors.white70,
+              fontWeight: FontWeight.w700,
+              letterSpacing: 0.5,
             ),
           ),
         ],
@@ -197,49 +241,64 @@ class ProfileScreen extends StatelessWidget {
   }
 
   Widget _buildGoalCard(String name, int progress, int current, int target) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(
-              name,
-              style: const TextStyle(
-                fontSize: 16,
-                color: Color(0xFF333333),
-                fontWeight: FontWeight.w600,
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: const Color(0xFF2A2A2A),
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(
+          color: const Color(0xFF3A3A3A),
+          width: 1,
+        ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(
+                child: Text(
+                  name,
+                  style: const TextStyle(
+                    fontSize: 13,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w700,
+                    letterSpacing: 0.5,
+                  ),
+                ),
               ),
-            ),
-            Text(
-              '$progress%',
-              style: const TextStyle(
-                fontSize: 16,
-                color: Color(0xFF6200EE),
-                fontWeight: FontWeight.bold,
+              Text(
+                '$progress%',
+                style: const TextStyle(
+                  fontSize: 16,
+                  color: Color(0xFFE31E24),
+                  fontWeight: FontWeight.w900,
+                ),
               ),
+            ],
+          ),
+          const SizedBox(height: 10),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(6),
+            child: LinearProgressIndicator(
+              value: progress / 100,
+              minHeight: 10,
+              backgroundColor: const Color(0xFF1A1A1A),
+              valueColor: const AlwaysStoppedAnimation<Color>(Color(0xFFE31E24)),
             ),
-          ],
-        ),
-        const SizedBox(height: 8),
-        ClipRRect(
-          borderRadius: BorderRadius.circular(4),
-          child: LinearProgressIndicator(
-            value: progress / 100,
-            minHeight: 8,
-            backgroundColor: const Color(0xFFE0E0E0),
-            valueColor: const AlwaysStoppedAnimation<Color>(Color(0xFF6200EE)),
           ),
-        ),
-        const SizedBox(height: 5),
-        Text(
-          '$current / $target',
-          style: const TextStyle(
-            fontSize: 12,
-            color: Color(0xFF666666),
+          const SizedBox(height: 8),
+          Text(
+            '$current / $target',
+            style: const TextStyle(
+              fontSize: 11,
+              color: Colors.white54,
+              fontWeight: FontWeight.w600,
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 
@@ -249,8 +308,12 @@ class ProfileScreen extends StatelessWidget {
       height: 100,
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: const Color(0xFFF5F5F5),
-        borderRadius: BorderRadius.circular(10),
+        color: unlocked ? const Color(0xFF2A2A2A) : const Color(0xFF1A1A1A),
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(
+          color: unlocked ? const Color(0xFFE31E24) : const Color(0xFF3A3A3A),
+          width: 2,
+        ),
       ),
       child: Stack(
         children: [
@@ -260,15 +323,20 @@ class ProfileScreen extends StatelessWidget {
               children: [
                 Text(
                   icon,
-                  style: const TextStyle(fontSize: 32),
+                  style: TextStyle(
+                    fontSize: 32,
+                    opacity: unlocked ? 1.0 : 0.3,
+                  ),
                 ),
-                const SizedBox(height: 5),
+                const SizedBox(height: 6),
                 Text(
                   name,
                   textAlign: TextAlign.center,
-                  style: const TextStyle(
-                    fontSize: 11,
-                    color: Color(0xFF333333),
+                  style: TextStyle(
+                    fontSize: 9,
+                    color: unlocked ? Colors.white : Colors.white30,
+                    fontWeight: FontWeight.w700,
+                    letterSpacing: 0.5,
                   ),
                 ),
               ],
@@ -278,8 +346,8 @@ class ProfileScreen extends StatelessWidget {
             Positioned.fill(
               child: Container(
                 decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.7),
-                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.black.withOpacity(0.6),
+                  borderRadius: BorderRadius.circular(12),
                 ),
                 child: const Center(
                   child: Text('🔒', style: TextStyle(fontSize: 24)),
@@ -293,10 +361,14 @@ class ProfileScreen extends StatelessWidget {
 
   Widget _buildSettingItem(String title) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 15),
-      decoration: const BoxDecoration(
-        border: Border(
-          bottom: BorderSide(color: Color(0xFFF0F0F0), width: 1),
+      margin: const EdgeInsets.only(bottom: 12),
+      padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+      decoration: BoxDecoration(
+        color: const Color(0xFF2A2A2A),
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(
+          color: const Color(0xFF3A3A3A),
+          width: 1,
         ),
       ),
       child: Row(
@@ -304,11 +376,17 @@ class ProfileScreen extends StatelessWidget {
         children: [
           Text(
             title,
-            style: const TextStyle(fontSize: 16, color: Color(0xFF333333)),
+            style: const TextStyle(
+              fontSize: 13,
+              color: Colors.white,
+              fontWeight: FontWeight.w700,
+              letterSpacing: 0.5,
+            ),
           ),
-          const Text(
-            '›',
-            style: TextStyle(fontSize: 24, color: Color(0xFF999999)),
+          const Icon(
+            Icons.arrow_forward_ios,
+            size: 16,
+            color: Color(0xFFE31E24),
           ),
         ],
       ),
