@@ -13,6 +13,12 @@ node_modules/
 dist/
 npm-debug.*
 
+# Backend
+backend/node_modules/
+backend/dist/
+backend/.env
+backend/*.log
+
 # Mobile
 *.jks
 *.p8
