@@ -1,15 +1,27 @@
-# Jess Fitness - Mobile Fitness App 💪
+# Jess Fitness - Mobile Fitness App 💪🔥
 
-A comprehensive mobile fitness application built with **Flutter**, inspired by Jet Fitness. Track your workouts, browse exercises, and monitor your fitness progress all in one place!
+A comprehensive mobile fitness application built with **Flutter**, featuring a bold, modern design inspired by Jetts Fitness. Track your workouts, browse exercises, and monitor your fitness progress with a high-energy, professional interface!
+
+## 🎨 New Design (January 2025)
+
+**Jetts-Style Aesthetic:**
+- Bold red and black color scheme (#E31E24, #1A1A1A)
+- Dark theme throughout for modern look
+- Uppercase typography with strong letter spacing
+- High-contrast, energetic visual design
+- Professional fitness brand aesthetic
+
+See [JETTS_DESIGN_UPDATE.md](JETTS_DESIGN_UPDATE.md) for complete design documentation.
 
 ## Features
 
-- 🔐 **Login Screen**: Beautiful authentication with email/password and social login options
-- 🏠 **Home Dashboard**: View fitness categories and quick stats
-- 💪 **Workout Tracker**: Manage and track your workout routines
-- 📚 **Exercise Library**: Browse and search through a comprehensive exercise database
-- 👤 **Profile & Progress**: Monitor your achievements, goals, and statistics
-- 🎨 **Beautiful UI**: Modern, intuitive interface with smooth navigation
+- 🔐 **Login Screen**: Bold dark theme with red accents, uppercase typography
+- 🏠 **Home Dashboard**: Red gradient header, dark stat cards, modern category grid
+- 💪 **Workout Tracker**: Dark workout cards with red completion states
+- 📚 **Exercise Library**: Searchable with category filtering, dark modern cards
+- 👤 **Profile & Progress**: Goals tracking, achievements, statistics with red accents
+- 🎨 **Bold Design**: Jetts-inspired modern aesthetic with dark theme
+- 🔴 **High Energy**: Red and black color scheme for fitness motivation
 
 ## Tech Stack
 

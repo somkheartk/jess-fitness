@@ -19,10 +19,33 @@ class JessFitnessApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFF6200EE),
-          primary: const Color(0xFF6200EE),
+          seedColor: const Color(0xFFE31E24),
+          primary: const Color(0xFFE31E24),
+          secondary: const Color(0xFF1A1A1A),
         ),
+        scaffoldBackgroundColor: const Color(0xFF1A1A1A),
         useMaterial3: true,
+        fontFamily: 'Roboto',
+        textTheme: const TextTheme(
+          headlineLarge: TextStyle(
+            fontSize: 32,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+          headlineMedium: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+          bodyLarge: TextStyle(
+            fontSize: 16,
+            color: Colors.white,
+          ),
+          bodyMedium: TextStyle(
+            fontSize: 14,
+            color: Colors.white70,
+          ),
+        ),
       ),
       home: const LoginScreen(),
     );
@@ -76,8 +99,9 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: const Color(0xFF6200EE),
+        selectedItemColor: const Color(0xFFE31E24),
         unselectedItemColor: Colors.grey,
+        backgroundColor: const Color(0xFF1A1A1A),
         onTap: _onItemTapped,
         type: BottomNavigationBarType.fixed,
       ),
